@@ -24,6 +24,12 @@ namespace lab9
             Playlist.Add(song5);
 
             DisplayPlayList(Playlist);
+
+            Playlist.Sort(new SortPlaylist());
+            
+            Console.WriteLine("\nSorting the playlist by Artist, then Title\n");
+
+            DisplayPlayList(Playlist);
         }
 
         static void DisplayPlayList(List<Song> pl)

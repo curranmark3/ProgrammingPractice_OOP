@@ -6,7 +6,14 @@ namespace lab9
     {
         public int Compare(Song x, Song y)
         {
-            throw new System.NotImplementedException();
+            int returnVal = string.Compare(x.Artist, y.Artist);
+
+            if (returnVal == 0)
+            {
+                returnVal = string.Compare(x.Title, y.Title);
+            }
+
+            return returnVal;
         }
     }
 
