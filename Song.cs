@@ -19,6 +19,12 @@
         }
         public Song(string title, string artist) : this(title, artist, 0, genre.Other) { }
         public Song() : this("Unknown", "Unknown") { }
+
+        //Methods
+        public override string ToString()
+        {
+            return string.Format($"{Title} {Artist} {Duration} {Genre}");
+        }
     }
     public enum genre
     {
