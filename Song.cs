@@ -1,5 +1,15 @@
-﻿namespace lab9
+﻿using System.Collections.Generic;
+
+namespace lab9
 {
+    public class SortPlaylist : IComparer<Song>
+    {
+        public int Compare(Song x, Song y)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+
     public class Song
     {
         //Properties

@@ -22,11 +22,18 @@ namespace lab9
             Playlist.Add(song3);
             Playlist.Add(song4);
             Playlist.Add(song5);
+
+            DisplayPlayList(Playlist);
         }
 
         static void DisplayPlayList(List<Song> pl)
         {
+            Console.WriteLine("{0,-20}{1,-25}{2,-10}{3,-10}", "Artist", "Song", "Duration", "Genre");
 
+            foreach (Song song in pl)
+            {
+                Console.WriteLine($"{song.Artist, -20}{song.Title, -25}{song.Duration, -10}{song.Genre, -10}");
+            }
         }
     }
 }
