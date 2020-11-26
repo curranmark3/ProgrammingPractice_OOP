@@ -30,8 +30,31 @@ namespace lab9
             Console.WriteLine("\nSorting the playlist by Artist, then Title\n");
 
             DisplayPlayList(Playlist);
+
+            List<Song> shuffledPlaylist = Shuffle(Playlist);
+
+            DisplayPlayList(shuffledPlaylist);
         }
 
+        static List<Song> Shuffle(List<Song> shuffledPl)
+        {
+            Console.WriteLine("\nShuffling playlist . . .");
+
+            Random rng = new Random();
+            Song temp = new Song();
+            int songNumber;
+
+            for (int i = 0; i < shuffledPl.Count; i++)
+            {
+                songNumber = rng.Next(shuffledPl.Count);
+                temp = shuffledPl.ElementAt(i);
+                shuffledPl[i] = shuffledPl.ElementAt(songNumber);
+                shuffledPl[songNumber] = temp;
+            }
+
+
+            return shuffledPl;
+        }
         static void DisplayPlayList(List<Song> pl)
         {
             Console.WriteLine("{0,-20}{1,-25}{2,-10}{3,-10}", "Artist", "Song", "Duration", "Genre");
